@@ -43,7 +43,7 @@ class App extends Component {
   render() {
     return (
       <section className="conteudo">
-        <FormularioCadastro categorias={this.categorias.categorias} 
+        <FormularioCadastro categorias={this.categorias} 
         criarNota={this.notas.criarNota} />
         <main className="conteudo-principal">
           <ListaCategorias 
