@@ -2,7 +2,13 @@ import React, { Component } from "react";
 import "./style.css"
 
 class listaCategorias extends Component {
+    componentDidMount(){
+        this.props.categorias.inscrever(this._novasCategorias.bind(this));
+    }
 
+    _novasCategorias(categorias){
+        console.log(categorias)
+    }
     _handleEventoinput(e){
         if(e.key == "Enter"){
             let valorCategoria = e.target.value;
@@ -14,7 +20,7 @@ class listaCategorias extends Component {
         return(
             <section className="lista-categorias">
                 <ul className="lista-categorias_lista">
-                    {this.props.categorias.map((categoria, index) => <li key={index} className="lista-categorias_item">{categoria}</li>)}
+                    {this.props.categorias.categorias.map((categoria, index) => <li key={index} className="lista-categorias_item">{categoria}</li>)}
                 </ul>
                 <input 
                 type="text" 
